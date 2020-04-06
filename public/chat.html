@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+          <div class="card shadow-sm bg-white rounded">
+            <div class="card-body">
+              <h1>Chat App</h1>
+
+              <div id='messages'></div>
+              <form class="form-to-submit" style="float:left">
+                <input type="text" id='msg'>
+                <input type="submit" class="btn btn-primary btn-sm" id='submit' value="submit to server">
+              </form>
+              <button type = "button" class = "btn btn-secondary btn-sm ml-2"id='location'>Send Location</button>
+               </div>
+            </div>
+            <div class="card shadow-sm bg-white rounded">
+              <div class="card-body">
+                <h5 class="card-title text-center">Active Users</h5>
+                <div id="user-col">
+
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card shadow bg-white rounded">
+            <div class="card-body" id="chat-body">
+              <h1>Messages</h1>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+        </div>
+    </div>
+  </div>
+
+
+
+  <template id='message-template'>
+    <div>
+        <p id='created-at' class='text-muted small'></p>
+        <p id='text-body'></p>
+    </div>
+  </template>
+
+  <template id='location-template'>
+      <div>
+        <p id='created-at' class='text-muted small'></p>
+        <a> My current location </a>
+      </div>
+  </template>
+
+  <template id='user-list'>
+    <div>
+      <p id='user'></p>
+    </div>
+  </template>
+
+
+
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.1/mustache.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.6.0/qs.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src='./js/chat.js'></script>
+</html>
