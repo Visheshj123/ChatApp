@@ -17,10 +17,12 @@ const messages = document.getElementById('chat-body');
 const { username, room } = Qs.parse(location.search, { ignoreQueryPrefix: true })
 
 const autoscroll = () => {
-  console.log(document.documentElement.scrollTop)
+  //console.log(document.documentElement.scrollTop)
   console.log(messages.scrollHeight)
+  console.log(messages.scrollTop)
+  messages.scrollTop = messages.scrollHeight
 
-    document.documentElement.scrollTop = messages.scrollHeight
+  //  document.documentElement.scrollTop = messages.scrollHeight
     //console.log(messages.scrollTop)
 
 
